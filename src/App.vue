@@ -74,7 +74,7 @@ const workOrder = reactive<Record<WorkOrderKey, string>>({
   notes: "Replace rooftop controller, inspect line sensors, and stage customer approval before 15:00.",
 });
 
-const themeName = computed(() => `ocean-${mode.value}`);
+const themeName = computed(() => `gilded-${mode.value}`);
 const currentRoute = computed(() => routeLookup.get(currentPath.value) ?? routes[0]);
 const shellTitle = computed(() => {
   if (currentRoute.value.id === "home") return "Northstar Field Services";
@@ -194,7 +194,7 @@ const pipelineColumns = [
 ];
 const packageRows = [
   { package: "@apexui/vue", role: "Vue 3 wrappers", proof: "All page controls import from package" },
-  { package: "@apexui/tokens", role: "Ocean themes", proof: "Shell uses data-apex-theme" },
+  { package: "@apexui/tokens", role: "Gilded themes", proof: "Shell uses data-apex-theme" },
   { package: "Vite", role: "Build host", proof: "Hash routes work on GitHub Pages" },
 ];
 const packageColumns = [
@@ -243,7 +243,7 @@ const uploadedFiles = [
 ];
 const proofItems = [
   { id: "routing", heading: "Hash routing", content: "Six business pages share Vue state and work on static GitHub Pages hosting." },
-  { id: "tokens", heading: "Ocean tokens", content: "The app shell switches between ocean-light and ocean-dark token scopes." },
+  { id: "tokens", heading: "Gilded tokens", content: "The app shell switches between gilded-light and gilded-dark token scopes." },
   { id: "components", heading: "ApexUI controls", content: "Forms, charts, tables, navigation, tabs, workflow, and feedback use @apexui/vue." },
 ];
 </script>
@@ -471,8 +471,8 @@ const proofItems = [
                 <ApexSwitch label="Customer approvals" description="Send approval requests from closeout." checked></ApexSwitch>
                 <ApexSwitch label="Weekly executive digest" description="Summarize SLA, margin, and open risk." checked></ApexSwitch>
                 <ApexButtonGroup label="Theme">
-                  <ApexButton size="sm" :variant="mode === 'light' ? 'primary' : 'secondary'" @click="setMode('light')">ocean-light</ApexButton>
-                  <ApexButton size="sm" :variant="mode === 'dark' ? 'primary' : 'secondary'" @click="setMode('dark')">ocean-dark</ApexButton>
+                  <ApexButton size="sm" :variant="mode === 'light' ? 'primary' : 'secondary'" @click="setMode('light')">gilded-light</ApexButton>
+                  <ApexButton size="sm" :variant="mode === 'dark' ? 'primary' : 'secondary'" @click="setMode('dark')">gilded-dark</ApexButton>
                 </ApexButtonGroup>
               </ApexStack>
             </div>
